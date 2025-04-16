@@ -57,7 +57,7 @@ public class Calculator {
                 //InputMismatchException 발생 시 처음부터 계산을 다시 실행
                 System.out.println("잘못된 입력입니다. 조건에 맞게 입력해주세요.");
                 sc.nextLine(); //버퍼 비우기
-                continue;
+                continue; //흐름 명시해주기 없어도 무방
             }
 
         }
