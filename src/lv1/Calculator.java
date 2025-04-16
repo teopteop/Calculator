@@ -34,7 +34,7 @@ public class Calculator {
                 } else if(c.equals("/")){
                     try {
                         sum = dividedInt(a, b);
-                    } catch (ArithmeticException e){
+                    } catch (Exception e){
                         System.out.println("나누기 진행 시 두 번째 값이 0이 될수 없습니다. 다시 시도해주세요.");
                         continue;
                     }
