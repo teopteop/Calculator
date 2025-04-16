@@ -77,7 +77,10 @@ public class Calculator {
         return a * b;
     }
 
-    public static double dividedInt(int a, int b){
+    public static double dividedInt(int a, int b) throws Exception{
+        if(b == 0){
+            throw new Exception();
+        }
         return (double)a / b;
     }
 }
