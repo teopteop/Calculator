@@ -8,7 +8,7 @@ public class Calculator {
         Scanner sc = new Scanner(System.in);
         int a = 0;
         int b = 0;
-        int sum = 0;
+        double sum = 0;
         String c = "";
 
         while (true) {
@@ -32,9 +32,14 @@ public class Calculator {
                 } else if(c.equals("*")){
                     sum = timesInt(a, b);
                 } else if(c.equals("/")){
-                    sum = dividedInt(a, b);
+                    try {
+                        sum = dividedInt(a, b);
+                    } catch (ArithmeticException e){
+                        System.out.println("나누기 진행 시 두 번째 값이 0이 될수 없습니다. 다시 시도해주세요.");
+                        continue;
+                    }
                 } else {
-                    System.out.println("지원하지 않는 형식입니다. 다시 진행해주세요.");
+                    System.out.println("지원하지 않는 형식입니다. 다시 시도해주세요.");
                     continue;
                 }
 
@@ -48,7 +53,7 @@ public class Calculator {
                     break;
                 }
 
-            } catch (Exception e){
+            } catch (InputMismatchException e){
                 //InputMismatchException 발생 시 처음부터 계산을 다시 실행
                 System.out.println("잘못된 입력입니다. 조건에 맞게 입력해주세요.");
                 sc.nextLine(); //버퍼 비우기
@@ -72,7 +77,7 @@ public class Calculator {
         return a * b;
     }
 
-    public static int dividedInt(int a, int b){
-        return a / b;
+    public static double dividedInt(int a, int b){
+        return (double)a / b;
     }
 }
