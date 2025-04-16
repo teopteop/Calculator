@@ -34,8 +34,8 @@ public class App {
                 } else if(c.equals("/")){
                     try {
                         cal.dividedInt(a, b);
-                    } catch (Exception e){
-                        System.out.println("나누기 진행 시 두 번째 값이 0이 될수 없습니다. 다시 시도해주세요.");
+                    } catch (IllegalArgumentException e){
+                        System.out.println(e.getMessage());
                         continue;
                     }
                 } else {

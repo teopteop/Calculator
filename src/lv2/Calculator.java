@@ -21,9 +21,9 @@ public class Calculator {
         this.sum = a * b;
     }
 
-    public void dividedInt(int a, int b) throws Exception{
+    public void dividedInt(int a, int b) throws IllegalArgumentException{
         if(b == 0){
-            throw new Exception();
+            throw new IllegalArgumentException("나누기 진행 시 두 번째 값이 0이 될수 없습니다. 다시 시도해주세요.");
         }
         this.sum = (double)a / b;
     }

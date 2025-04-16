@@ -34,8 +34,8 @@ public class Calculator {
                 } else if(c.equals("/")){
                     try {
                         sum = dividedInt(a, b);
-                    } catch (Exception e){
-                        System.out.println("나누기 진행 시 두 번째 값이 0이 될수 없습니다. 다시 시도해주세요.");
+                    } catch (IllegalArgumentException e){
+                        System.out.println(e.getMessage());
                         continue;
                     }
                 } else {
@@ -77,9 +77,9 @@ public class Calculator {
         return a * b;
     }
 
-    public static double dividedInt(int a, int b) throws Exception{
+    public static double dividedInt(int a, int b) throws IllegalArgumentException{
         if(b == 0){
-            throw new Exception();
+            throw new IllegalArgumentException("나누기 진행 시 두 번째 값이 0이 될수 없습니다. 다시 시도해주세요.");
         }
         return (double)a / b;
     }
