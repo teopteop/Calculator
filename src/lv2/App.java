@@ -26,14 +26,14 @@ public class App {
                 c = sc.next();
 
                 if(c.equals("+")){
-                    cal.plusInt(a, b);
+                    cal.setSumList(cal.plusInt(a, b));
                 } else if(c.equals("-")){
-                    cal.minusInt(a, b);
+                    cal.setSumList(cal.minusInt(a, b));
                 } else if(c.equals("*")){
-                    cal.timesInt(a, b);
+                    cal.setSumList(cal.timesInt(a, b));
                 } else if(c.equals("/")){
                     try {
-                        cal.dividedInt(a, b);
+                        cal.setSumList(cal.dividedInt(a, b));
                     } catch (IllegalArgumentException e){
                         System.out.println(e.getMessage());
                         continue;
@@ -43,7 +43,7 @@ public class App {
                     continue;
                 }
 
-                System.out.println("계산 결과값은: " + cal.getSum() + " 입니다.");
+                System.out.println("계산 결과값은: " + cal.getSumList() + " 입니다.");
                 sc.nextLine(); //남은 개행문자(\n) 지우기
                 System.out.println("엔터를 누르면 다음 계산을 진행합니다. ('exit'를 입력시 종료됩니다.)");
                 c = sc.nextLine();
