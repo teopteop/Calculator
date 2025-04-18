@@ -34,6 +34,12 @@ public class Calculator {
         }
         return (double)a / b;
     }
+
+    public void checkNegative(int a, int b) throws IllegalArgumentException{
+        if(a < 0 || b < 0){
+            throw new IllegalArgumentException("입력값은 음수가 될 수 없습니다. (입력값>=0)");
+        }
+    }
 }
 //저장 값이 있을때 명확한 타겟을 수정하는 역할이 세터에 가까운 느낌이지만 인덱스의 값을 바꿔줘...
 //오케이이긴 하다...

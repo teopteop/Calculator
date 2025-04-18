@@ -22,6 +22,9 @@ public class App {
                 System.out.print("두 번째 정수: ");
                 b = sc.nextInt();
 
+                //음수 체크 메서드
+                cal.checkNegative(a, b);
+
                 System.out.println("계산을 진행할 연산 기호를 입력하세요.(+, -, *, /)");
                 c = sc.next();
 
@@ -57,6 +60,9 @@ public class App {
                 //InputMismatchException 발생 시 처음부터 계산을 다시 실행
                 System.out.println("잘못된 입력입니다. 조건에 맞게 입력해주세요.");
                 sc.nextLine(); //버퍼 비우기
+                continue; //흐름 명시해주기 없어도 무방
+            } catch (IllegalArgumentException e){
+                System.out.println(e.getMessage());
                 continue; //흐름 명시해주기 없어도 무방
             }
 
