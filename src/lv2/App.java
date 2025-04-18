@@ -48,6 +48,10 @@ public class App {
 
                 System.out.println("계산 결과값은: " + cal.getSumList() + " 입니다.");
                 sc.nextLine(); //남은 개행문자(\n) 지우기
+
+                //계산기 저장값 비우기
+                cal.clearSumList();
+
                 System.out.println("엔터를 누르면 다음 계산을 진행합니다. ('exit'를 입력시 종료됩니다.)");
                 c = sc.nextLine();
 

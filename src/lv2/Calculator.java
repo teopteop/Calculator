@@ -8,7 +8,11 @@ public class Calculator {
     private final List<Double> sumList = new ArrayList<>();
 
     public double getSumList(){
-        return sumList.get(sumList.size()-1);
+        return sumList.get(0);
+    }
+
+    public void clearSumList(){
+        sumList.clear();
     }
 
     public void setSumList(double sum){
