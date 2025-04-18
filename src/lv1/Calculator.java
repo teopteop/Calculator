@@ -22,6 +22,12 @@ public class Calculator {
                 System.out.print("두 번째 정수: ");
                 b = sc.nextInt();
 
+                //음수 체크 로직
+                if(a < 0 || b < 0){
+                    System.out.println("0보다 작은 값을 입력했습니다. 다시 시도해주세요!");
+                    continue;
+                }
+
                 System.out.println("계산을 진행할 연산 기호를 입력하세요.(+, -, *, /)");
                 c = sc.next();
 
