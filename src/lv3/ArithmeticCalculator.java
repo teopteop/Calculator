@@ -27,22 +27,22 @@ public class ArithmeticCalculator<T extends Number> {
         }
     }
 
-    private final List<Number> sumList = new ArrayList<>();
+    private final List<Number> operationResults = new ArrayList<>();
 
     public void clearSumList() {
-        sumList.clear();
+        operationResults.clear();
     }
 
-    public void setSumList(Number sum) {
-        sumList.add(sum);
+    public void setOperationResults(Number sum) {
+        operationResults.add(sum);
     }
 
     public Number getSum() {
-        return sumList.get(sumList.size()-1);
+        return operationResults.get(operationResults.size()-1);
     }
 
-    public List<Number> getSumList() {
-        return sumList;
+    public List<Number> getOperationResults() {
+        return operationResults;
     }
 
     public void checkNegative(T num1, T num2) throws IllegalArgumentException{
@@ -57,22 +57,22 @@ public class ArithmeticCalculator<T extends Number> {
 
         switch (oper) {
             case PLUS:
-                setSumList(num1.doubleValue() + num2.doubleValue());
+                setOperationResults(num1.doubleValue() + num2.doubleValue());
                 break;
 
             case MINUS:
-                setSumList(num1.doubleValue() - num2.doubleValue());
+                setOperationResults(num1.doubleValue() - num2.doubleValue());
                 break;
 
             case TIMES:
-                setSumList(num1.doubleValue() * num2.doubleValue());
+                setOperationResults(num1.doubleValue() * num2.doubleValue());
                 break;
 
             case DIVINED:
                 if(num2.doubleValue() == 0){
                     throw new IllegalArgumentException("나누기 진행 시 두 번째 값이 0이 될수 없습니다. 다시 시도해주세요.");
                 }
-                setSumList(num1.doubleValue() / num2.doubleValue());
+                setOperationResults(num1.doubleValue() / num2.doubleValue());
                 break;
         }
 

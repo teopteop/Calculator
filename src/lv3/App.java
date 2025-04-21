@@ -23,7 +23,7 @@ public class App {
                 Number num3 = np.parseNumber(sc.nextLine());
 
                 PrintList printList = () -> {
-                    List<Number> f = ac.getSumList().stream().filter(num -> num.doubleValue() > num3.doubleValue())
+                    List<Number> f = ac.getOperationResults().stream().filter(num -> num.doubleValue() > num3.doubleValue())
                             .toList();
                     if(f.isEmpty()){
                         System.out.println("입력값보다 큰 값이 없습니다.");
@@ -45,8 +45,9 @@ public class App {
                 System.out.println(e.getMessage());
             }
 
-            sc.close();
         }
+
+        sc.close(); //스캐너 종료 위치 수정
 
     }
 }
