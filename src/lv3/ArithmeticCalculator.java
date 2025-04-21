@@ -2,10 +2,10 @@ package lv3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-public class ArithmeticCalculator {
-
-    public enum OperatorType {
+public class ArithmeticCalculator<T extends Number> {
+    private enum OperatorType {
         PLUS("+"), MINUS("-"), TIMES("*"), DIVINED("/");
 
         private final String oper;
@@ -38,13 +38,21 @@ public class ArithmeticCalculator {
         sumList.add(sum);
     }
 
-    public static <T extends Number> void checkNegative(T num1, T num2) throws IllegalArgumentException{
+    public Number getSum() {
+        return sumList.get(sumList.size()-1);
+    }
+
+    public List<Number> getSumList() {
+        return sumList;
+    }
+
+    public void checkNegative(T num1, T num2) throws IllegalArgumentException{
         if(num1.doubleValue() < 0 || num2.doubleValue() < 0){
             throw new IllegalArgumentException("입력값은 음수가 될 수 없습니다. (입력값>=0)");
         }
     }
 
-    public <T extends Number> void calculator (T num1, T num2, String c){
+    public void calculator (T num1, T num2, String c){
         OperatorType oper = OperatorType.operChoice(c);
         checkNegative(num1, num2);
 
@@ -68,6 +76,9 @@ public class ArithmeticCalculator {
                 setSumList(num1.doubleValue() / num2.doubleValue());
                 break;
         }
+
+        System.out.println("계산 결과는: " + getSum() + " 입니다.");
+
     }
 }
 
