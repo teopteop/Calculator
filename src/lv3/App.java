@@ -1,9 +1,7 @@
 package lv3;
 
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class App {
     public static void main(String[] args) {
@@ -40,6 +38,7 @@ public class App {
                 if(check.equals("exit")){
                     break;
                 }
+
             } catch (NumberFormatException e) {
                 System.out.println("잘못된 입력입니다.");
             } catch (IllegalArgumentException e) {
