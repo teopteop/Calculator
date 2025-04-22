@@ -29,15 +29,19 @@ public class ArithmeticCalculator<T extends Number> {
 
     private final List<Number> operationResults = new ArrayList<>();
 
-    public void clearSumList() {
+    public void clearOperationResults() {
         operationResults.clear();
+    }
+
+    public void removeOperationResult(int i) {
+        operationResults.remove(i);
     }
 
     public void setOperationResults(Number sum) {
         operationResults.add(sum);
     }
 
-    public Number getSum() {
+    public Number getOperationResult() {
         return operationResults.get(operationResults.size()-1);
     }
 
@@ -76,7 +80,7 @@ public class ArithmeticCalculator<T extends Number> {
                 break;
         }
 
-        System.out.println("계산 결과는: " + getSum() + " 입니다.");
+        System.out.println("계산 결과는: " + getOperationResult() + " 입니다.");
 
     }
 }
