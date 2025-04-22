@@ -32,6 +32,7 @@ public class Calculator {
         return a * b;
     }
 
+    //0으로 나누기 진행시 예외 던지기
     public double dividedInt(int a, int b) throws IllegalArgumentException{
         if(b == 0){
             throw new IllegalArgumentException("나누기 진행 시 두 번째 값이 0이 될수 없습니다. 다시 시도해주세요.");
@@ -39,6 +40,7 @@ public class Calculator {
         return (double)a / b;
     }
 
+    //음수값을 매개변수로 받을 시 예외 던지기
     public void checkNegative(int a, int b) throws IllegalArgumentException{
         if(a < 0 || b < 0){
             throw new IllegalArgumentException("입력값은 음수가 될 수 없습니다. (입력값>=0)");

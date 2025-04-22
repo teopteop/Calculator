@@ -29,6 +29,7 @@ public class ArithmeticCalculator<T extends Number> {
 
     private final List<Number> operationResults = new ArrayList<>();
 
+/*  요구사항 구현 목적(실행x)
     public void clearOperationResults() {
         operationResults.clear();
     }
@@ -36,6 +37,7 @@ public class ArithmeticCalculator<T extends Number> {
     public void removeOperationResult(int i) {
         operationResults.remove(i);
     }
+ */
 
     public void setOperationResults(Number sum) {
         operationResults.add(sum);
@@ -49,6 +51,7 @@ public class ArithmeticCalculator<T extends Number> {
         return operationResults;
     }
 
+    //음수값이 매개변수로 들어올 때 예외 던지기
     public void checkNegative(T num1, T num2) throws IllegalArgumentException{
         if(num1.doubleValue() < 0 || num2.doubleValue() < 0){
             throw new IllegalArgumentException("입력값은 음수가 될 수 없습니다. (입력값>=0)");
@@ -56,7 +59,9 @@ public class ArithmeticCalculator<T extends Number> {
     }
 
     public void calculator (T num1, T num2, String c){
+        //String c에 해당하는 상수값을 저장(연산자)
         OperatorType oper = OperatorType.operChoice(c);
+        //음수인지 확인
         checkNegative(num1, num2);
 
         switch (oper) {

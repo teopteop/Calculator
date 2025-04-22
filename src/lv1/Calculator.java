@@ -51,6 +51,7 @@ public class Calculator {
 
                 System.out.println("계산 결과값은: " + sum + " 입니다.");
                 sc.nextLine(); //남은 개행문자(\n) 지우기
+
                 System.out.println("엔터를 누르면 다음 계산을 진행합니다. ('exit'를 입력시 종료됩니다.)");
                 c = sc.nextLine();
 
@@ -68,6 +69,8 @@ public class Calculator {
 
         }
 
+        sc.close(); //스캐너 종료
+
     }
 
     //사칙연산 메서드
@@ -83,6 +86,7 @@ public class Calculator {
         return a * b;
     }
 
+    //0으로 나누기 진행시 예외 던지기
     public static double dividedInt(int a, int b) throws IllegalArgumentException{
         if(b == 0){
             throw new IllegalArgumentException("나누기 진행 시 두 번째 값이 0이 될수 없습니다. 다시 시도해주세요.");

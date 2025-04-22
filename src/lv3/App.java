@@ -10,6 +10,7 @@ public class App {
         ArithmeticCalculator<Number> ac = new ArithmeticCalculator();
 
         while(true) {
+            //예외 처리
             try {
                 System.out.println("계산을 진행할 두 숫자를 입력하세요. (입력값 >=0)");
                 System.out.print("첫 번째 입력값: ");
@@ -22,10 +23,11 @@ public class App {
                 System.out.println("숫자를 입력하면 지금까지의 계산값 중 입력값보다 큰 값을 출력합니다.");
                 Number num3 = np.parseNumber(sc.nextLine());
 
+                //람다, 스트림 요구사항 구현
                 PrintList printList = () -> {
                     List<Number> f = ac.getOperationResults().stream().filter(num -> num.doubleValue() > num3.doubleValue())
-                            .toList();
-                    if(f.isEmpty()){
+                            .toList(); // < 자바 16부터 생긴 수집메서드 불변리스트 / .collect(Collectors.toList()); 가변리스트
+                    if(f.isEmpty()){ //필터된 값 x
                         System.out.println("입력값보다 큰 값이 없습니다.");
                     } else {
                         System.out.println("입력값보다 큰 값은: " + f);
@@ -39,7 +41,7 @@ public class App {
                     break;
                 }
 
-            } catch (NumberFormatException e) {
+            } catch (NumberFormatException e) { //파서로 형변환이 안될때
                 System.out.println("잘못된 입력입니다.");
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
@@ -47,7 +49,7 @@ public class App {
 
         }
 
-        sc.close(); //스캐너 종료 위치 수정
+        sc.close(); //스캐너 종료
 
     }
 }

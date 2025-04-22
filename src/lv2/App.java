@@ -71,6 +71,8 @@ public class App {
             }
 
         }
+
+        sc.close(); //스캐너 종료
     }
 }
 
