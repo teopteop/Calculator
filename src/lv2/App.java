@@ -29,14 +29,14 @@ public class App {
                 c = sc.next();
 
                 if(c.equals("+")){
-                    cal.setSumList(cal.plusInt(a, b));
+                    cal.setOperationResults(cal.plusInt(a, b));
                 } else if(c.equals("-")){
-                    cal.setSumList(cal.minusInt(a, b));
+                    cal.setOperationResults(cal.minusInt(a, b));
                 } else if(c.equals("*")){
-                    cal.setSumList(cal.timesInt(a, b));
+                    cal.setOperationResults(cal.timesInt(a, b));
                 } else if(c.equals("/")){
                     try {
-                        cal.setSumList(cal.dividedInt(a, b));
+                        cal.setOperationResults(cal.dividedInt(a, b));
                     } catch (IllegalArgumentException e){
                         System.out.println(e.getMessage());
                         continue;
@@ -46,7 +46,7 @@ public class App {
                     continue;
                 }
 
-                System.out.println("계산 결과값은: " + cal.getSumList() + " 입니다.");
+                System.out.println("계산 결과값은: " + cal.getOperationResults() + " 입니다.");
                 sc.nextLine(); //남은 개행문자(\n) 지우기
 
                 //계산기 저장값 비우기
